@@ -99,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
             int position = data.getExtras().getInt(KEY_ITEM_POSITION);
             //Update model text at correct position
             items.set(position, itemText);
+            //Notify Adapter
+            itemsAdapter.notifyItemChanged(position);
             //Persist changes
             saveItems();
             Toast.makeText(getApplicationContext(), "Item updated successfully", Toast.LENGTH_SHORT).show();
